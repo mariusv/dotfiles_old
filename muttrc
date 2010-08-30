@@ -1,0 +1,61 @@
+set imap_idle
+unset imap_passive
+set message_cachedir = ~/.mutt/cache
+set certificate_file = ~/mutt/certs
+set imap_check_subscribed
+set imap_list_subscribed
+set imap_user =user@gmail.com imap_pass = My#1Password
+set spoolfile = imaps://imap.gmail.com/INBOX
+unmailboxes /var/mail/user
+auto_view text/html
+alternative_order = text/plain text/html
+set header_cache = ~/.mutt/cache
+set smtp_url = "smtp://user@gmail.com@smtp.gmail.com:587/"
+set smtp_pass = "My#1Password"
+# Use up/down to scroll text in pager
+bind pager    <up>    previous-line
+bind pager    <down>    next-line
+bind pager    j   next-line
+bind pager    k   previous-line
+
+# not really necessary with 'unset mark_old'
+bind index,pager  <tab>   next-unread
+
+# this is more useful than change-folder 
+bind index,pager  c   next-unread-mailbox
+
+# but change-folder is necessary sometimes
+macro index,pager \ec   <change-folder>
+
+# not saving mail so often
+#bind pager   s   skip-quoted
+# this macro is better
+macro pager   s   <skip-quoted><half-up>
+bind index,pager  S   save-message
+
+# use mouse scroll
+bind index,pager  <button4> previous-line
+bind index,pager  <button2> next-line
+
+#bind index,pager k   sidebar-prev
+#bind index,pager j   sidebar-next
+#bind index,pager <space>   sidebar-open
+macro index,pager B   ":toggle sidebar_visible<enter>"
+
+# I hate exit without changes!
+bind index,pager  x   quit
+
+# retrieve mails
+macro index,pager G   "!ugetmail gmx"<return>
+
+# dealing with spam
+macro index,pager \ed   "<delete-pattern>.<return>" "delete all"
+#macro index,pager  \er   "<save-message>imaps://imap.gmail.com/[Gmail]/Spam<return>" "Report Gmail spam"
+macro index,pager \ct   "<save-message>imaps://imap.gmail.com/[Gmail]/Trash<return>" "Delete Gmail message"
+set trash="imaps://imap.gmail.com/[Gmail]/Trash"
+set from = "user@gmail.com"
+set realname = "Name Surname"
+set folder = imaps://imap.gmail.com/INBOX
+unset mark_old
+
+
