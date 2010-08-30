@@ -1,0 +1,8 @@
+[user]
+	name = Marius Voilă
+	email = marius@mariusv.com
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
