@@ -4,14 +4,14 @@ set message_cachedir = ~/.mutt/cache
 set certificate_file = ~/mutt/certs
 set imap_check_subscribed
 set imap_list_subscribed
-set imap_user = marius.voila@gmail.com imap_pass = unudoi3patru5
+set imap_user = user@gmail.com imap_pass = My#1Password
 set spoolfile = imaps://imap.gmail.com/INBOX
 unmailboxes /var/mail/marius
 auto_view text/html
 alternative_order = text/plain text/html
 set header_cache = ~/.mutt/cache
-set smtp_url = "smtp://marius.voila@gmail.com@smtp.gmail.com:587/"
-set smtp_pass = "unudoi3patru5"
+set smtp_url = "smtp://user@gmail.com@smtp.gmail.com:587/"
+set smtp_pass = "My#1Password"
 # Use up/down to scroll text in pager
 bind pager    <up>    previous-line
 bind pager    <down>    next-line
@@ -53,8 +53,8 @@ macro index,pager \ed   "<delete-pattern>.<return>" "delete all"
 #macro index,pager  \er   "<save-message>imaps://imap.gmail.com/[Gmail]/Spam<return>" "Report Gmail spam"
 macro index,pager \ct   "<save-message>imaps://imap.gmail.com/[Gmail]/Trash<return>" "Delete Gmail message"
 #set trash="imaps://imap.gmail.com/[Gmail]/Trash"
-set from = "marius.voila@gmail.com"
-set realname = "Marius Voilă"
+set from = "user@gmail.com"
+set realname = "Nme Surname"
 set folder = imaps://imap.gmail.com/INBOX
 unset mark_old
 #source colors.muttrc
