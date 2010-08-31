@@ -6,7 +6,7 @@ set imap_check_subscribed
 set imap_list_subscribed
 set imap_user = user@gmail.com imap_pass = My#1Password
 set spoolfile = imaps://imap.gmail.com/INBOX
-unmailboxes /var/mail/marius
+unmailboxes /var/mail/user
 auto_view text/html
 alternative_order = text/plain text/html
 set header_cache = ~/.mutt/cache
